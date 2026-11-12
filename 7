@@ -1,0 +1,33 @@
+Employee Salary and Performance Evaluation
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float salary, attendance, bonus = 0;
+    int rating, years;
+
+    cout << "Enter Salary, Attendance, Rating and Years: ";
+    cin >> salary >> attendance >> rating >> years;
+
+    if (attendance > 95)
+        bonus = 15;
+    else if (attendance >= 90)
+        bonus = 10;
+    else if (attendance >= 75)
+        bonus = 5;
+    else
+        bonus = 0;
+
+    if (rating < 3)
+        bonus = 0;
+
+    salary = salary + (salary * bonus / 100);
+
+    if (years > 5)
+        salary = salary + 5000;
+
+    cout << "Final Salary: " << salary;
+
+    return 0;
+}
