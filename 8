@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int balance, withdraw, daily, blocked, verify;
+
+    cout << "Enter Balance, Withdrawal, Daily Withdrawn, Blocked (1/0), Verification (1/0): ";
+    cin >> balance >> withdraw >> daily >> blocked >> verify;
+
+    if (blocked == 1)
+        cout << "Withdrawal Rejected";
+    else if (withdraw < 500 || withdraw % 500 != 0)
+        cout << "Invalid Withdrawal";
+    else if (withdraw > balance)
+        cout << "Insufficient Balance";
+    else if (daily + withdraw > 100000)
+        cout << "Daily Limit Exceeded";
+    else if (withdraw > 50000 && verify == 0)
+        cout << "Additional Verification Required";
+    else
+        cout << "Withdrawal Allowed. Remaining Balance: " << balance - withdraw;
+
+    return 0;
+}
