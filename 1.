@@ -1,0 +1,54 @@
+1. Smart Electricity Billing System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int units;
+    int dueDay, dueMonth, dueYear;
+    int payDay, payMonth, payYear;
+    double bill = 0, surcharge = 0, lateFee = 0, totalBill;
+
+    cout << "Enter consumed units: ";
+    cin >> units;
+
+    cout << "Enter due date (day month year): ";
+    cin >> dueDay >> dueMonth >> dueYear;
+
+    cout << "Enter payment date (day month year): ";
+    cin >> payDay >> payMonth >> payYear;
+
+    if (units <= 100)
+        bill = units * 10;
+
+    else if (units <= 200)
+        bill = (100 * 10) + (units - 100) * 15;
+
+    else if (units <= 500)
+        bill = (100 * 10) + (100 * 15)
+               + (units - 200) * 20;
+
+    else
+        bill = (100 * 10) + (100 * 15)
+               + (300 * 20) + (units - 500) * 25;
+
+    if (bill > 10000)
+        surcharge = bill * 0.05;
+
+    totalBill = bill + surcharge;
+
+    int dueDate = dueYear * 10000 + dueMonth * 100 + dueDay;
+    int paymentDate = payYear * 10000 + payMonth * 100 + payDay;
+
+    if (paymentDate > dueDate)
+        lateFee = totalBill * 0.10;
+
+    totalBill = totalBill + lateFee;
+
+    cout << "\nElectricity Bill: " << bill << endl;
+    cout << "Surcharge: " << surcharge << endl;
+    cout << "Late Fee: " << lateFee << endl;
+    cout << "Final Bill: " << totalBill << endl;
+
+    return 0;
+}
