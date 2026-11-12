@@ -1,0 +1,41 @@
+2.University Admission Eligibility System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float matric, inter, entry;
+
+    cout << "Enter Matric Marks (%): ";
+    cin >> matric;
+
+    cout << "Enter Intermediate Marks (%): ";
+    cin >> inter;
+
+    cout << "Enter Entry Test Marks (%): ";
+    cin >> entry;
+
+    if (matric >= 60 && inter >= 65 && entry >= 50)
+    {
+        cout << "\nAdmission Approved" << endl;
+
+        if (inter >= 85 && entry >= 80)
+        {
+            cout << "Scholarship: Eligible" << endl;
+            cout << "Admission Category: Merit Scholarship" << endl;
+        }
+        else
+        {
+            cout << "Scholarship: Not Eligible" << endl;
+            cout << "Admission Category: Regular Admission" << endl;
+        }
+    }
+    else
+    {
+        cout << "\nAdmission Rejected" << endl;
+        cout << "Scholarship: Not Eligible" << endl;
+        cout << "Admission Category: Not Eligible" << endl;
+    }
+
+    return 0;
+}
