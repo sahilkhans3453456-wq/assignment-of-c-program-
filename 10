@@ -1,0 +1,33 @@
+Smart Examination Result and Scholarship System
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, c, d, e;
+    float total, percentage;
+
+    cout << "Enter Five Subjects Marks: ";
+    cin >> a >> b >> c >> d >> e;
+
+    total = a + b + c + d + e;
+    percentage = total / 500 * 100;
+
+    cout << "Percentage: " << percentage << endl;
+
+    if (a < 40 || b < 40 || c < 40 || d < 40 || e < 40)
+        cout << "Fail";
+    else if (percentage < 50)
+        cout << "Not Eligible for Degree";
+    else if (percentage >= 85)
+        cout << "Gold Medal";
+    else if (percentage >= 75)
+        cout << "Silver Medal";
+    else if (percentage >= 65)
+        cout << "Merit Scholarship";
+    else
+        cout << "Pass";
+
+    return 0;
+}
