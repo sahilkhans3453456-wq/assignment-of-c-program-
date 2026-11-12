@@ -1,0 +1,47 @@
+Bank Loan Approval System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age, years;
+    double salary, installment;
+    int creditScore;
+
+    cout << "Enter Age: ";
+    cin >> age;
+
+    cout << "Enter Monthly Salary: ";
+    cin >> salary;
+
+    cout << "Enter Employment Duration (years): ";
+    cin >> years;
+
+    cout << "Enter Existing Monthly Loan Installments: ";
+    cin >> installment;
+
+    cout << "Enter Credit Score: ";
+    cin >> creditScore;
+
+    if (age >= 21 && salary >= 50000 &&
+        years >= 2 && installment <= salary * 0.40 &&
+        creditScore >= 600)
+    {
+        if (salary > 150000 && years > 5)
+        {
+            cout << "\nLoan Approved" << endl;
+            cout << "Category: Premium Loan" << endl;
+        }
+        else
+        {
+            cout << "\nLoan Approved" << endl;
+            cout << "Category: Regular Loan" << endl;
+        }
+    }
+    else
+    {
+        cout << "\nLoan Rejected" << endl;
+    }
+
+    return 0;
+}
