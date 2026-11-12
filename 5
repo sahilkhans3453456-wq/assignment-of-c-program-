@@ -1,0 +1,48 @@
+Smart Traffic Fine Management System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int speed, fine = 0;
+    int previous, licence, registered;
+
+    cout << "Enter Speed: ";
+    cin >> speed;
+
+    cout << "Previous Violations (1 Yes, 0 No): ";
+    cin >> previous;
+
+    cout << "Valid Licence (1 Yes, 0 No): ";
+    cin >> licence;
+
+    cout << "Vehicle Registered (1 Yes, 0 No): ";
+    cin >> registered;
+
+    if (speed <= 60)
+        fine = 0;
+    else if (speed <= 80)
+        fine = 2000;
+    else if (speed <= 100)
+        fine = 5000;
+    else
+        fine = 10000;
+
+    if (previous == 1)
+        fine = fine + (fine * 25 / 100);
+
+    if (licence == 0)
+        fine = fine + 5000;
+
+    if (registered == 0)
+        fine = fine + 10000;
+
+    cout << "Total Fine: " << fine << endl;
+
+    if (licence == 0 || registered == 0)
+        cout << "Journey Not Allowed";
+    else
+        cout << "Journey Allowed";
+
+    return 0;
+}
