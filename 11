@@ -1,0 +1,30 @@
+Smart Insurance Claim Approval System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int insurance, expired, licence, alcohol, responsible;
+    float damage, claim;
+
+    cout << "Enter Insurance, Expired, Licence, Alcohol, Damage, Claim and Responsible: ";
+    cin >> insurance >> expired >> licence >> alcohol >> damage >> claim >> responsible;
+
+    if (insurance == 0 || expired == 1 || licence == 0 || alcohol == 1)
+        cout << "Claim Rejected";
+    else if (damage < 20000)
+    {
+        cout << "Claim Approved Without Inspection" << endl;
+
+        if (responsible == 1)
+            claim = claim - (claim * 20 / 100);
+
+        cout << "Final Payable Amount: Rs. " << claim;
+    }
+    else if (damage <= 200000)
+        cout << "Physical Inspection Required";
+    else
+        cout << "Manager Approval Required";
+
+    return 0;
+}
