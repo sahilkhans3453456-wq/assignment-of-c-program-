@@ -1,0 +1,40 @@
+Hospital Emergency Priority System
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age, heart;
+    float temp, oxygen;
+
+    cout << "Enter Age: ";
+    cin >> age;
+
+    cout << "Enter Temperature: ";
+    cin >> temp;
+
+    cout << "Enter Oxygen Level: ";
+    cin >> oxygen;
+
+    cout << "Enter Heart Rate: ";
+    cin >> heart;
+
+    if (oxygen < 90 || heart > 130 || heart < 45)
+    {
+        cout << "Critical Priority";
+    }
+    else if (age > 65 && temp > 102)
+    {
+        cout << "High Priority";
+    }
+    else if (oxygen >= 90 && oxygen <= 94)
+    {
+        cout << "Moderate Priority";
+    }
+    else
+    {
+        cout << "Normal Priority";
+    }
+
+    return 0;
+}
