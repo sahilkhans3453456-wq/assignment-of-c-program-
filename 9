@@ -1,0 +1,29 @@
+Smart Examination Result and Scholarship
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float distance, fare;
+    int waiting, time, premium, cancelled;
+
+    cout << "Enter Distance, Waiting, Time, Premium and Cancelled: ";
+    cin >> distance >> waiting >> time >> premium >> cancelled;
+
+    if (cancelled == 1)
+        cout << "Driver Penalty: Rs. 300";
+    else
+    {
+        fare = 150 + (distance * 50) + (waiting * 10);
+
+        if (time >= 22 || time < 6)
+            fare = fare + (fare * 20 / 100);
+
+        if (premium == 1)
+            fare = fare - (fare * 10 / 100);
+
+        cout << "Final Fare: Rs. " << fare;
+    }
+
+    return 0;
+}
